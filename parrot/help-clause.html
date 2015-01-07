@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="51鹦鹉网－当日到货不隔夜｜产地直供!水果,国产水果,进口水果,特价水果 "/>
+    <meta name="Description" content="51鹦鹉网是专业的水果视频网络销售平台，精选水果，产地直接供应水果" />
+<title>51鹦鹉网－帮助中心-隐私保护条款－当日到货不隔夜!</title>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/public_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/index_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="css/list.css"/>
+<link rel="stylesheet" type="text/css" href="css/lrtk.css">
+<link rel="stylesheet" type="text/css" href="css/simplePagination.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script src="js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jQuery.md5.js"></script>
+<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>	
+<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+<script type="text/javascript" src="js/jquery-ui.js"></script>	
+<script type="text/javascript" src="js/cardCookie.js"></script>
+<script type="text/javascript" src="js/commodity.js"></script>
+<script type="text/javascript" src="js/address.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript">
+	//页面加载
+	var init=new initIndex();
+	var address=new addressMange();
+	$(window).load(function() {	
+		init.initialize();
+		init.loadShoppingCart();	
+		init.loadUserArea();
+		address.initArea();
+        return_top();
+	});
+	$(document).keypress(function(e) { 
+			//回车键事件,执行登录
+			if(e.which == 13) { 
+				init.loginReuest();
+			} 
+	}); 
+</script>
+
+</head>
+<body>
+<!--头部-->
+<div id="Header">
+	<div class="headcont">
+		<div class="area" onclick="init.showArea()">
+			<a href="javascript:void(0);"  class="link" id="showUserSelectArea">请选择服务区域</a>
+			 <img src="images/ico_arrow.gif"/>
+	    </div>
+		<div id="wexinDialog" title="微信关注" style="display:none;"><center><br/><image src="images/weixin.jpg"></b></center></div>  
+		<div class="btns" style="display:;" id="loginBefore"><!--登录前-->
+			<a href="register.html" target="_self" class="link">注册</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showLogin()">登录</a><span class="line">|</span>
+            <a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a>	
+			<span class="line">|</span>
+			<a href="mycart.html" class="buycar">
+			<img border="0" src="images/ico_car.gif" width="25" height="23" />去购物车结算【0】</a>			
+		</div>
+		<div class="btns" style="display:none;" id="loginAfter"><!--登录后-->
+			<a href="account_safe.html"><span id="userInfo"></span></a>
+			<a href="javascript:void(0);" onclick="init.logoutReuest()">［退出］</a>
+			<span class="line">|</span><!--登录后-->
+			<a href="myorder.html" target="_self" class="link">我的订单</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a><span class="line">|</span>
+			<a href="mycart.html" target="_self" class="buycar">
+			<img border="0" src="images/ico_car.gif" width="25" height="23" />去购物车结算【<b id='myCard'>0</b>】</a>
+		</div>
+		<div class="cls"></div>
+		<!--新增加 0417 start-->
+		<div  style="display:none;" id="areaWin">
+            <div class="areaWin_left">
+                <img src="images/logo.jpg" style="width: 170px;height: 70px;"/>
+            </div>
+            <div class="areaWin_right">
+                <h3 class="text_org">欢迎来到51鹦鹉网</h3>
+                <p>请选择您需要的送货区域</p>
+                <h4 class="text_org" >！提示：暂时只提供以下服务区域，其他服务区域暂时不能提供免费送货服务。</h4>
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="fillform ct">
+                    <tr align="f">
+                        <td width="33%">
+                            <div id="uboxstyle1">
+                                <select name="xzq" id="xzq" class="fill2" onchange="address.loadUserSelectAreaXzq()">
+                                    <option value="0"  selected="selected">请选择行政区</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td width="33%">
+                            <div id="uboxstyle2">
+                                <select name="shq" id="shq" class="fill2" onchange="address.loadUserSelectAreaSq()">
+                                    <option value="0"  selected="selected">请选择街道（商圈）</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="16" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="left"><a href="javascript:void(0);" onclick="init.userSelectArea()" class="btnred">确&nbsp;&nbsp;&nbsp;&nbsp;定</a></td>
+                    </tr>
+                </table>
+            </div>
+
+		</div>
+		<!--新增加 0417 end-->
+		<div id="loginWin" style="display:none;">
+			<br />
+			
+			<form action="" method="post" id="login_form" name="login_form">
+			  <table width="90%" border="0" cellspacing="0" cellpadding="0" class="ct" style="display:;">
+				<tr>
+					<td width="10%" align="right"><p>用户名</p></td>
+                    <td width="4%">&nbsp;</td>
+                    <td width="86%"><input type="text" name="login" id="login"  class="fill" required autofocus /></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td align="right"><p>密码</p></td>
+                    <td>&nbsp;</td>
+                    <td><input type="password" name="password" id="password" class="fill" required /></td>
+					
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td width="80%" colspan="3">
+						<div id="verificationCode" style="display:none;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td align="right" width="6%">验证码</td>
+								<td width="2%">&nbsp;</td>
+								<td width="50%">
+									<input style="width:190px;" type="text" name="captcha" id="captcha" class="fill2" required />
+									<image src="" id="captchaImage" style="vertical-align:middle;" /> <a href="javascript:void(0)" style="text-decoration:underline;vertical-align:middle;color:#888;"  onclick="init.loadVerificationCode()">换一张</a>
+								</td>
+							  </tr>
+							 </table>
+						 </div>
+					</td>
+				</tr>
+				<tr id="login_space" style="display:none;">
+					<td colspan="3" height="17"></td>
+				</tr>
+				<tr id="show_error" style="display:none;">
+					<td align="right">&nbsp;</td>
+                    <td>&nbsp;</td>
+					<td><b class="error_org" id="error_org"></b></td>
+				</tr>	
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                         <tr>
+								<td width="6%" height="43"><input type="checkbox" id="autoLoginSelcted"/></td>
+								<td width="46%"><span>2周内自动登录</span></td>
+								<td  align="right"><a href="password_step1.html" target="_self"  class="text_gra" style="color:#888;">忘记密码？</a></td>
+							</tr>
+                        </table>
+
+                    </td>
+				</tr>
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="50%"><a href="javascript:void(0)" onclick="init.loginReuest()" class="btnred">立即登录</a></td>
+							<td width="50%" align="right"><a href="register.html" class="btnblue1">注&nbsp;&nbsp;&nbsp;&nbsp;册</a></td>
+                          </tr>
+                        </table>
+
+                    </td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--4个服务-->
+<div id="Logo">
+	<a href="index.html" target="_self"><img src="images/logo.jpg" width="199" height="87" /></a>
+    <ul>
+        <li>
+           <a href="http://www.51yingwu.com/detail.html?commodityId=107&groupCommodityId=157" target="_blank">新疆西州蜜哈密瓜</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=118&groupCommodityId=163" target="_blank">新西兰金奇异果</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=139&groupCommodityId=191" target="_blank">越南红心火龙果</a>
+        </li>
+    </ul>
+</div>
+
+<!--导航-->
+<div id="Nav">
+	<div class="navcont">
+		<ul class="navitem">
+			<li><a href="index.html" target="_self">首页</a></li>
+			<li><a href="favorable.html">特惠活动</a></li>
+			<li><a href="list.html" target="_self">鹦鹉优选</a></li>
+			<li><a href="company.html" target="_self">关于我们</a></li>
+			<div class="cls"></div>	
+		</ul>	
+		<div class="cls"></div>	
+	</div>
+</div>
+
+<div class="container">
+		
+	<div class="bread">
+		<h5><a href="#" class="text_gra1">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;帮助中心</h5>
+	</div>
+
+	<div class="leftbar grey_ul">
+        <div class="grey_bg"><h3><a href="#">新手指南</a></h3> </div>
+        <ul class="help_leftnav">
+       		<li><h4><a href="help-register.html" target="_self" >注册会员</a></h4></li>
+			<li><h4><a href="help-shopping.html" target="_self">购物流程</a></h4></li>
+			<li><h4><a href="help-agreement.html" target="_self" >用户协议</a></h4></li>
+            <li><h4><a href="help-clause.html" target="_self" class="help_hover">隐私条款</a></h4></li>
+            <li class="br_blank"></li>
+		</ul>
+        <div class="grey_bg"><h3><a href="#">配送方式</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-distributionNotice.html" target="_self">配送须知</a></h4></li>
+            <li><h4><a href="help-distributionTime.html" target="_self">配送时间</a></h4></li>
+            <li><h4><a href="help-distributionRange.html" target="_self">配送范围</a></h4></li>
+             <li><h4><a href="help-distributionRate.html" target="_self">配送运费</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+       <div class="grey_bg"><h3><a href="#">支付方式</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-payment.html" target="_self" >支付方式</a></h4></li>
+            <li><h4><a href="help-coupons.html" target="_self" >兑换券说明</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        <div class="grey_bg"><h3><a href="#">售后服务</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-inspection.html" target="_self">开箱验货</a></h4></li>
+            <li><h4><a href="help-exchangeGoods.html" target="_self"  >退换货政策</a></h4></li>
+             <li><h4><a href="help-exchangeProcess.html" target="_self">退换货流程</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        
+       <!-- <div class="grey_bg"><h3><a href="#">联系客服</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="#">找回密码</a></h4></li>
+            <li><h4><a href="#">新用户注册</a></h4></li>
+            <li><h4><a href="#">隐私保护条款</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        -->
+
+
+	</div>
+	
+	<div class="content help_content">
+		<h3>
+            隐私保护条款
+		</h3>
+        <div class="help_txt">
+        
+           <ol>
+               <li>
+                   <h4>本隐私保护条款会随着"51鹦鹉网"服务范围的不断扩大而随时进行更新。欢迎您随时来查阅本隐私保护条款，并欢迎您通过在线客服和客服电话010-82699765反馈您的意见。</h4>
+                  
+               </li>
+               <li>
+                   <h4>密码</h4><p>
+密码是识别您的身份的唯一方式，您只能通过您的密码来使用您的帐号。如果您泄漏了密码，您可能丢失了您的个人识别信息，并且有可能导致对您不利的司法行为。因此，不管任何原因使您的密码安全受到危及，您应该立即通过客服电话010-82699765和我们取得联系。
+
+
+               </p></li>
+               <li>
+                   <h4>注册信息</h4><p>
+当您在注册为用户时，我们要求您提供注册信息。注册信息可能要求提供您的真实姓名，地址，国籍，电话号码，和电子邮件地址。如果您是公司客户，您还有可能被要求提供您的公司的地址，电话号码和贵公司的服务和产品的简短说明。您还有权选择来填写附加信息。这些信息可能包括您公司所在的省份和城市，时区和邮政编码，传真号码，主页和您的职业、职务、教育程度、收入状况、婚姻、家庭状况等。我们使用注册信息来获得用户的统计资料。我们将会用这些统计数据来给我们的用户分类，以便有针对性地向我们的用户提供新的服务。我们会通过您的邮件地址来通知您这些新的服务。
+
+
+               </p></li>
+               <li>
+                   <h4>使用者非个人化信息</h4><p>
+我们将通过您的IP地址来收集非个人化的信息，例如您的浏览器性质、操作系统种类、给您提供接入服务的ISP的域名等，以优化在您计算机屏幕上显示的页面。通过收集上述信息，我们亦进行客流量统计，从而改进网站的管理和服务。
+
+               </p></li>
+               <li>
+                 <h4>
+                用户权利</h4><p>
+您对于自己的个人资料及密码享有以下权利(在成功登录之后)：随时查询及请求阅览;随时请求补充或更正;随时请求删除。针对以上权利，"51鹦鹉网"为您提供相关服务，请致电010-82699765。
+
+               </p></li>
+                <li>
+                 <h4>
+                您的交易行为</h4><p>
+我们跟踪IP地址仅仅只是为了安全的必要。如果我们没有发现任何安全问题，我们会及时删除我们收集到的IP地址。我们还跟踪全天的页面访问数据。全天页面访问数据被用来反映网站的流量，以使我们可以为未来的发展制定计划(例如，增加服务器)。
+
+                </p></li>
+                <li>
+                 <h4>
+                邮件/短信</h4><p>
+"51鹦鹉网"有权通过邮件、短信、邮寄会刊的形式，对本网站注册、购物用户发送订单信息、促销活动等告知服务的权利。如果您在"51鹦鹉网"注册、购物，表明您已默示同意接受此项服务。如果您不想接收来自"51鹦鹉网"的邮件、短信或会刊，您可以向"51鹦鹉网"客服提出退阅申请，并注明您的E-mail地址、手机号或相关地址信息，"51鹦鹉网"会在收到申请后为您办理退阅。
+
+                </p></li>
+                <li>
+                 <h4>
+                合理利用原则</h4><p>
+"51鹦鹉网"保证不对外公开或向任何第三方透露您的注册信息、账户信息和交易信息，但是存在下列情形之一的除外：公开或透露相关信息之前获得您许可的;为免除您在生命、身体或财产方面之急迫危险;根据法律或政策的规定而公开或透露的;为向您提供商品或服务而需要公开或透露的;为防止他人权益之重大危害; "51鹦鹉网"为保护自身利益而公开的;为增进公共利益，且无害于您的重大利益;我们发现您违反了"51鹦鹉网"公司用户注册协议条款或任何其他相关服务的使用规定;根据用户注册协议其它约定而公开或透露的。
+
+                </p></li>
+                <li>
+                 <h4>
+               第三方</h4><p>
+为了向您提供优质的服务，您同意"51鹦鹉网"将您的注册信息、账户信息和交易信息提供给"51鹦鹉网"的关联公司以及与"51鹦鹉网"合作的第三方。当我们被法律强制或依照政府要求提供您的信息时我们将善意地披露您的资料。在此情况下之任何披露，"51鹦鹉网"均不承担任何责任。
+
+                </p></li>
+                <li>
+                 <h4>
+                网站评论</h4><p>
+"51鹦鹉网"欢迎并鼓励您在网站系统上进行商品评论、文章评论、公布订单、发布图片或视频等言论行为。在这些区域内，您公布的任何信息都会成为公开的信息。因此，我们提醒并请您慎重考虑是否有必要在这些区域公开您的个人信息。
+
+                </p></li>
+               <li><h4>信息的存储和交换</h4><p>
+用户信息和资料被收集和存储在放置于中国的服务器上。只有为了做备份的需要时，我们才可能需要将您的资料传送到别国的服务器上。
+               </p></li>
+               <li><h4>外部链接</h4><p>
+本站含有到其他网站的链接。"51鹦鹉网"对那些网站的隐私保护措施不负任何责任。我们可能在任何需要的时候增加商业伙伴或共用品牌的网站。
+               </p></li>
+               <li><h4>信息安全</h4><p>
+我们网站有相应的安全措施来确保我们掌握的信息不丢失，不被滥用和变造。这些安全措施包括向其它服务器备份数据和对用户密码加密。尽管我们有这些安全措施，但请注意在因特网上不存在"完善的安全措施"。"51鹦鹉网"对网站或相应的系统进行检修、维护或升级时，有可能丢失、损坏或泄漏您的注册信息、账户信息或交易信息，您对此表示理解，且不要求"51鹦鹉网"承担任何责任。 为保证交易安全以及保障您的合法权益，"51鹦鹉网"建议您对注册信息、账户信息和交易信息进行数据备份。
+               </p></li>
+               <li><h4>Cookies</h4><p>
+Cookies是指一种技术，当使用者访问设有Cookies装置的"51鹦鹉网"网站时，"51鹦鹉网"网站之服务器会自动发送Cookies至您的浏览器内，并储存到您的电脑硬盘内，此Cookies便负责记录日后您到访"51鹦鹉网"网站的种种活动、个人资料、浏览习惯、消费习惯甚至信用记录。运用 Cookies技术，"51鹦鹉网"网站能够为您提供更加周到的个性化服务。"51鹦鹉网"网站将会运用Cookies追访您的购物喜好，从而向您提供感兴趣的信息资料。
+               </p></li>
+ <li><h4>免责</h4><p>
+除本隐私保护条款上述规定的免责外，下列情况时"51鹦鹉网"网站亦毋需承担任何责任：由于您将用户密码告知他人或与他人共享注册帐户，由此导致的任何个人资料泄露;任何由于黑客政击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之不可抗力而造成的个人资料泄露、丢失、被盗用或被篡改等;由于与本网站链接的其它网站所造成之个人资料泄露及由此而导致的任何法律争议和后果。
+
+ </p></li>
+ <li><h4>联系我们</h4><p>
+"51鹦鹉网"会始终致力于在充分保护您隐私的前提下，为您提供更优质的商品和服务。如果你对本隐私保护条款或"51鹦鹉网"的隐私保护措施以及您在使用中的问题有任何意见和建议请和我们联系：010-82699765。
+ </p></li>
+
+
+           </ol>
+        </div>
+	</div>
+	<div class="cls"></div>	
+	<br />
+
+</div>
+<br />
+<br />
+<!--流程-->
+<div id="Other"></div>
+
+<!--相关信息-->
+<div class="info">
+	<h4>                
+		 <a href="help-register.html" target="_self">新手指南</a>
+        <a href="help-distributionNotice.html" target="_self">配送方式</a>
+		<a href="help-payment.html" target="_self">支付方式</a>
+        <a href="help-inspection.html" target="_self">售后服务</a>
+		<a href="company.html" target="_self">关于我们</a>
+	
+	</h4>
+	<p>Copyright©2014 www.51yingwu.com. All Rights Reserved 北京妙想志成科技有限公司 ｜ <a href="http://www.miitbeian.gov.cn/" style="color: #7E7E7E" target="_blank">京ICP备14037065号</a><br/>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+</div>
+
+
+
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+
+
+
+</body>
+</html>

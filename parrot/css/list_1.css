@@ -1,0 +1,172 @@
+@charset "utf-8";
+/* CSS Document */
+.con_text{
+	border:1px #d1ccc7 solid;}
+.con_head{
+	display:block;
+	width:auto;
+	height:30px;
+	background:url(../images/bg_context_line.jpg) repeat-x bottom left;}
+.con_head span{
+	display:inline-block;
+	width:auto;
+	height:26px;
+	color:#333;
+	font-size:16px;
+
+	border-bottom:4px #f46200 solid;}
+.con_main{}
+
+.ads{
+	width:1180px;
+	height:108px;
+	border:1px #d1ccc7 solid;
+	background:url(../images/bg_special.jpg) no-repeat;
+	margin:13px auto;}
+
+.imgshow{
+	width:490px;
+	height:490px;
+	overflow:hidden;
+	background:#fff;
+	float:left;
+	margin:22px 50px 22px 22px;
+	position:relative;}
+.imgshow .imgzoom{
+	position:absolute;
+	bottom:20px;
+	right:5px;}
+.imgshow .imgzoom a{
+	display:block;
+	width:70px;
+	height:70px;
+	float:left;
+	margin-right:15px;}
+.imgshow .imgzoom a:hover img,
+.imgshow .imgzoom a:active img{
+	border:2px #fff solid;
+	width:71px;
+	height:71px;}
+
+
+
+.infoshow{
+	width:535px;
+	height:475px;
+	overflow:hidden;
+	float:left;
+	margin:22px 0 0 0;}
+.infoshow h1{
+	font-size:34px;
+
+	font-weight:normal;
+	color:#333;}
+.infoshow h2{
+	font-size:22px;
+
+	font-weight:normal;
+	color:#e74c3c;height:48px;line-height:48px;}
+#commodityTitle{line-height:28px;}
+.infoshow table .white_bg{background:#fff;} 
+
+.infoshow .price h2{
+	font-size:40px;
+
+	font-weight:normal;
+	color:#e74c3c;}
+.infoshow .price h2 span,.infoshow .price h2 em{
+	font-size:20px;
+	}
+.infoshow .price h2 em{float:left;line-height:38px;font-style:normal;}
+.infoshow table p{color:#484848;}
+.infoshow table .text_wh{color:#fff;}
+
+.infoshow .price p.market{
+	color:#aaa;
+	margin:30px 0 0 10px;}
+.infoshow .price p.market span{
+	text-decoration:line-through;}
+
+.number{
+	width:auto;
+	height:22px;
+	line-height:22px;
+	}
+.number span{
+	color:#484848;}
+.number a{
+	display:inline;
+	padding:2px 6px;
+	background:#f7f7f7;
+	border:1px #eaeaea solid;}
+.number input{
+	display:inline;
+	width:50px;
+	height:20px;
+	border:1px #eaeaea solid;
+	line-height:20px;
+	text-align:center;}
+
+.list{}
+.list li{
+	width:282px;
+	float:left;
+    display: inline;
+	margin-right:16px;
+	margin-bottom:20px;}
+.list li.fr{
+	float:right;
+	margin-right:0;}
+.list li h4{
+	display:block;
+	width:auto;
+	height:24px;
+	line-height:24px;
+	background:#674942;
+	color:#fff;
+	text-align:center;
+	}
+.list li .list_inner{
+	padding-bottom:10px;
+	width:280px;
+	border:1px #d1ccc7 solid;
+	position:relative;}
+	.list_inner img{border-bottom:1px solid #ccc;}
+.list li .list_info{
+	height:90px;
+	margin-top:5px;}
+.list li .list_info p.h4{
+	font-size:16px;
+    overflow: hidden;
+	display:block;
+	width:auto;
+	height:34px;
+	line-height:34px;
+	color:#333;
+	border-bottom:#f7f5f5;
+
+	font-weight:bold;
+	padding-left:15px;}
+.list li .list_info p.text_org{
+	font-size:30px;
+
+	color:#e74c3c;
+	float:left;
+	margin-left:15px;}
+.list li .list_info p.market{
+	font-size:12px;
+
+	color:#bbb;
+	margin-left:15px;}
+.list li .list_info p.market span{
+	text-decoration:line-through;}
+.list li .list_info p.text_org span{
+	font-size:14px;
+	}
+.list li .list_info .btnorg{
+	border-radius:0;
+	margin-right:5px;
+	position:absolute;
+	bottom:12px;
+	right:6px;}
+.help_txt li  img{width:888px;height:415px;}

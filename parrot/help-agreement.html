@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="51鹦鹉网－当日到货不隔夜｜产地直供!水果,国产水果,进口水果,特价水果 "/>
+    <meta name="Description" content="51鹦鹉网是专业的水果视频网络销售平台，精选水果，产地直接供应水果" />
+<title>51鹦鹉网－帮助中心-用户协议－当日到货不隔夜!</title>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/public_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/index_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="css/list.css"/>
+<link rel="stylesheet" type="text/css" href="css/lrtk.css">
+<link rel="stylesheet" type="text/css" href="css/simplePagination.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script src="js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jQuery.md5.js"></script>
+<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>	
+<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+<script type="text/javascript" src="js/jquery-ui.js"></script>	
+<script type="text/javascript" src="js/cardCookie.js"></script>
+<script type="text/javascript" src="js/commodity.js"></script>
+<script type="text/javascript" src="js/address.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript">
+	//页面加载
+	var init=new initIndex();
+	var address=new addressMange();
+	$(window).load(function() {	
+		init.initialize();
+		init.loadShoppingCart();	
+		init.loadUserArea();
+		address.initArea();
+        return_top();
+	});
+	$(document).keypress(function(e) { 
+			//回车键事件,执行登录
+			if(e.which == 13) { 
+				init.loginReuest();
+			} 
+	}); 
+</script>
+
+</head>
+<body>
+<!--头部-->
+<div id="Header">
+	<div class="headcont">
+		<div class="area" onclick="init.showArea()">
+			<a href="javascript:void(0);"  class="link" id="showUserSelectArea">请选择服务区域</a>
+			 <img src="images/ico_arrow.gif"/>
+	    </div>
+		<div id="wexinDialog" title="微信关注" style="display:none;"><center><br/><image src="images/weixin.jpg"></b></center></div>  
+		<div class="btns" style="display:;" id="loginBefore"><!--登录前-->
+			<a href="register.html" target="_self" class="link">注册</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showLogin()">登录</a><span class="line">|</span>
+            <a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a>	
+			<span class="line">|</span>
+			<a href="mycart.html" class="buycar">
+			<img border="0" src="images/ico_car.gif" width="25" height="23" />去购物车结算【0】</a>			
+		</div>
+		<div class="btns" style="display:none;" id="loginAfter"><!--登录后-->
+			<a href="account_safe.html"><span id="userInfo"></span></a>
+			<a href="javascript:void(0);" onclick="init.logoutReuest()">［退出］</a>
+			<span class="line">|</span><!--登录后-->
+			<a href="myorder.html" target="_self" class="link">我的订单</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a><span class="line">|</span>
+			<a href="mycart.html" target="_self" class="buycar">
+			<img border="0" src="images/ico_car.gif" width="25" height="23" />去购物车结算【<b id='myCard'>0</b>】</a>
+		</div>
+		<div class="cls"></div>
+		<!--新增加 0417 start-->
+		<div  style="display:none;" id="areaWin">
+            <div class="areaWin_left">
+                <img src="images/logo.jpg" style="width: 170px;height: 70px;"/>
+            </div>
+            <div class="areaWin_right">
+                <h3 class="text_org">欢迎来到51鹦鹉网</h3>
+                <p>请选择您需要的送货区域</p>
+                <h4 class="text_org" >！提示：暂时只提供以下服务区域，其他服务区域暂时不能提供免费送货服务。</h4>
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="fillform ct">
+                    <tr align="f">
+                        <td width="33%">
+                            <div id="uboxstyle1">
+                                <select name="xzq" id="xzq" class="fill2" onchange="address.loadUserSelectAreaXzq()">
+                                    <option value="0"  selected="selected">请选择行政区</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td width="33%">
+                            <div id="uboxstyle2">
+                                <select name="shq" id="shq" class="fill2" onchange="address.loadUserSelectAreaSq()">
+                                    <option value="0"  selected="selected">请选择街道（商圈）</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="16" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="left"><a href="javascript:void(0);" onclick="init.userSelectArea()" class="btnred">确&nbsp;&nbsp;&nbsp;&nbsp;定</a></td>
+                    </tr>
+                </table>
+            </div>
+
+		</div>
+		<!--新增加 0417 end-->
+		<div id="loginWin" style="display:none;">
+			<br />
+			
+			<form action="" method="post" id="login_form" name="login_form">
+			  <table width="90%" border="0" cellspacing="0" cellpadding="0" class="ct" style="display:;">
+				<tr>
+					<td width="10%" align="right"><p>用户名</p></td>
+                    <td width="4%">&nbsp;</td>
+                    <td width="86%"><input type="text" name="login" id="login"  class="fill" required autofocus /></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td align="right"><p>密码</p></td>
+                    <td>&nbsp;</td>
+                    <td><input type="password" name="password" id="password" class="fill" required /></td>
+					
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td width="80%" colspan="3">
+						<div id="verificationCode" style="display:none;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td align="right" width="6%">验证码</td>
+								<td width="2%">&nbsp;</td>
+								<td width="50%">
+									<input style="width:190px;" type="text" name="captcha" id="captcha" class="fill2" required />
+									<image src="" id="captchaImage" style="vertical-align:middle;" /> <a href="javascript:void(0)" style="text-decoration:underline;vertical-align:middle;color:#888;"  onclick="init.loadVerificationCode()">换一张</a>
+								</td>
+							  </tr>
+							 </table>
+						 </div>
+					</td>
+				</tr>
+				<tr id="login_space" style="display:none;">
+					<td colspan="3" height="17"></td>
+				</tr>
+				<tr id="show_error" style="display:none;">
+					<td align="right">&nbsp;</td>
+                    <td>&nbsp;</td>
+					<td><b class="error_org" id="error_org"></b></td>
+				</tr>	
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                         <tr>
+								<td width="6%" height="43"><input type="checkbox" id="autoLoginSelcted"/></td>
+								<td width="46%"><span>2周内自动登录</span></td>
+								<td  align="right"><a href="password_step1.html" target="_self"  class="text_gra" style="color:#888;">忘记密码？</a></td>
+							</tr>
+                        </table>
+
+                    </td>
+				</tr>
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                    
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="50%"><a href="javascript:void(0)" onclick="init.loginReuest()" class="btnred">立即登录</a></td>
+							<td width="50%" align="right"><a href="register.html" class="btnblue1">注&nbsp;&nbsp;&nbsp;&nbsp;册</a></td>
+                          </tr>
+                        </table>
+
+                    </td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--4个服务-->
+<div id="Logo">
+	<a href="index.html" target="_self"><img src="images/logo.jpg" width="199" height="87" /></a>
+    <ul>
+        <li>
+             <a href="http://www.51yingwu.com/detail.html?commodityId=107&groupCommodityId=157" target="_blank">新疆西州蜜哈密瓜</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=118&groupCommodityId=163" target="_blank">新西兰金奇异果</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=139&groupCommodityId=191" target="_blank">越南红心火龙果</a>
+        </li>
+    </ul>
+</div>
+
+<!--导航-->
+<div id="Nav">
+	<div class="navcont">
+		<ul class="navitem">
+			<li><a href="index.html" target="_self">首页</a></li>
+			<li><a href="favorable.html">特惠活动</a></li>
+			<li><a href="list.html" target="_self">鹦鹉优选</a></li>
+			<li><a href="company.html" target="_self">关于我们</a></li>
+			<div class="cls"></div>	
+		</ul>	
+		<div class="cls"></div>	
+	</div>
+</div>
+
+<div class="container">
+		
+	<div class="bread">
+		<h5><a href="#" class="text_gra1">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;帮助中心</h5>
+	</div>
+
+	<div class="leftbar grey_ul">
+        <div class="grey_bg"><h3><a href="#">新手指南</a></h3> </div>
+        <ul class="help_leftnav">
+       		<li><h4><a href="help-register.html" target="_self" >注册会员</a></h4></li>
+			<li><h4><a href="help-shopping.html" target="_self">购物流程</a></h4></li>
+			<li><h4><a href="help-agreement.html" target="_self" class="help_hover">用户协议</a></h4></li>
+            <li><h4><a href="help-clause.html" target="_self">隐私条款</a></h4></li>
+            <li class="br_blank"></li>
+		</ul>
+        <div class="grey_bg"><h3><a href="#">配送方式</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-distributionNotice.html" target="_self">配送须知</a></h4></li>
+            <li><h4><a href="help-distributionTime.html" target="_self">配送时间</a></h4></li>
+          <li><h4><a href="help-distributionRange.html" target="_self">配送范围</a></h4></li>
+             <li><h4><a href="help-distributionRate.html" target="_self">配送运费</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+       <div class="grey_bg"><h3><a href="#">支付方式</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-payment.html" target="_self" >支付方式</a></h4></li>
+            <li><h4><a href="help-coupons.html" target="_self" >兑换券说明</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        <div class="grey_bg"><h3><a href="#">售后服务</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="help-inspection.html" target="_self">开箱验货</a></h4></li>
+            <li><h4><a href="help-exchangeGoods.html" target="_self"  >退换货政策</a></h4></li>
+            <li><h4><a href="help-exchangeProcess.html" target="_self">退换货流程</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        
+       <!-- <div class="grey_bg"><h3><a href="#">联系客服</a></h3> </div>
+        <ul class="help_leftnav">
+            <li><h4><a href="#">找回密码</a></h4></li>
+            <li><h4><a href="#">新用户注册</a></h4></li>
+            <li><h4><a href="#">隐私保护条款</a></h4></li>
+            <li class="br_blank"></li>
+        </ul>
+        -->
+
+
+	</div>
+	
+	<div class="content help_content">
+		<h3>
+            用户注册协议
+		</h3>
+        <div class="help_txt">
+        
+           <ol>
+               <li>
+                   <h4>"51鹦鹉网"是由北京妙想志成科技有限公司（下称妙想志成公司）自建并运营的电子商务网站。妙想志成公司将通过本网站向您提供优质的商品及相关服务，并严格遵守本协议及相关承诺。当您通过本网站系统注册成为用户或以其它方式获得本网站所提供的商品及相关服务时，即表明您已经完全接受并签署了本协议。</h4>
+                  
+               </li>
+               <li>
+                   <h4>一．协议接纳</h4><p>
+1.1 您应当认真阅读本协议，对于协议中粗体字的内容和涉及重要权益的内容，您应当加以重点阅读。 如果您对本协议中的某一或某些条款产生疑问，您应当向妙想志成公司咨询。如果您不同意本协议中的某一或某些条款，您应当立即停止注册。
+<br/>
+1.2 本协议为电子形式的协议，是处理您与妙想志成公司一切权利义务关系的约定，对双方均具有法律约束力。
+<br/>
+1.3 "51鹦鹉网"网站上所发布的一切规则均是本协议的特殊条款，是本协议不可分割的组成部分。因此，当您完全接受本协议时，当然且确定的表明您也完全接受本协议的特殊条款。
+<br/>
+1.4 妙想志成公司根据经营需要对本协议作出的新修订，或其在"51鹦鹉网"网站上不时发布的新规则对您具有法律约束力。如果您不愿意接受，请您停止注册，或停止使用"51鹦鹉网"网站。
+</p>
+               </li>
+               <li>
+                   <h4>二．服务说明</h4><p>
+2.1妙想志成公司通过其自建的"51鹦鹉网"网站运营系统，为您提供商品交易、物流配送、售后服务等服务项目。除此之外，"51鹦鹉网"网站所不时推出的新商品和新服务均属于本协议的调整范围。<br/>
+2.2 为使用"51鹦鹉网"网站，您应当自行负责接入国际互联网，以及配备上网所需的一切硬件设备，包括但不限于计算机、调制解调器或其它存取设备。由此所产生的一切费用，您同意妙想志成公司不予承担。<br/>
+2.3 为方便您使用"51鹦鹉网"网站，妙想志成公司尽最大努力保障网络的畅通性。但是由于互联网服务的特殊性，妙想志成公司不保证服务不会中断，也不担保服务的绝对安全性和准确性。<br/>
+2.4 为保障您的利益或提高服务质量，妙想志成公司有权定期或不定期的对网站或相应的系统进行检修、维护或升级，您对此表示理解和支持。
+</p>
+                  
+               </li>
+               <li>
+                   <h4>三．网上注册</h4><p>
+3.1 当您登陆"51鹦鹉网"网站注册系统进行注册时，您应当具备完全民事权利能力和完全民事行为能力。如果您不具备完全民事权利能力或完全民事行为能力，您应当停止注册或在您的监护人的参与下完成注册。如果您违反本项规定而进行注册，妙想志成公司将有权注销您的账户。<br/>
+3.2 您应该根据"51鹦鹉网"网站系统的要求填写必要的注册信息和账户信息，并保证信息的合法性、真实性、及时性和有效性。注册成功后，如果您所填写的信息发生改变，您应当及时登录"51鹦鹉网"网站变更相关内容。<br/>
+3.3 如果妙想志成公司发现您填写的注册信息和账户信息存在违法、不真实或无效的可能性，妙想志成公司有权删除相关信息或注销您的账户。<br/>
+3.4 注册成功后，您将获得"51鹦鹉网"网站为您提供的用户名。该用户名的所有权归属于妙想志成公司，您对用户名仅具有使用权。<br/>
+3.5 您愿意接受由妙想志成公司以电子邮件、手机短信等方式发送的任何广告和其它商业信息。<br/>
+3.6 您不得将您注册的用户名及其对应密码转让、出借或出租给任何第三方使用，您应当为在该用户名下所发生的一切行为负责。如果您是在监护人参与下完成用户注册的不具备完全民事权利能力或完全民事行为能力的自然人，您及您的监护人同意为在该用户名下所发生的一切行为负责。<br/>
+3.7 为保证交易安全，您应当妥善保管用户名和密码，并对他人使用您的计算机设定限制。如果因为您的疏忽或管理不善，造成用户名和密码外泄、被盗等后果的，您应当自行承担由此所引发的一切损失。
+
+</p>
+                  
+               </li>
+               <li>
+                 <h4>
+                 四．商品信息</h4><p>
+4.1 "51鹦鹉网"网站上所发布的一切商品信息，包括但不限于图片、视频、文字说明，均供您决定是否订购商品，一旦您在决定订购商品后通过网站系统提交订单，即表明您向妙想志成公司发出了明确的购买该商品的意图。<br/>
+4.2 妙想志成公司有义务最大限度的提高商品信息的准确性、及时性、完整性和有效性。但是您认同，由于信息复杂、信息量庞大以及互联网技术问题，商品信息出现误差或错误在所难免。因此，妙想志成公司不必因此而承担法律责任。<br/>
+4.3 为最大限度的提高商品信息的准确性、及时性、完整性和有效性，妙想志成公司有权利对商品信息进行不间断的监测、修改或删除，您对此表示理解和支持。<br/>
+4.4 当您通过网站系统提交订单后，商品信息发生变化的，您不得以变更后的商品信息主张权利或要求妙想志成公司承担责任。 <br/>
+4.5 因网站系统或互联网技术性问题导致商品信息发生错误的，妙想志成公司有权视情况取消订单或作其它处理。<br/>
+4.6 妙想志成公司不对商品的适用性及商品能够满足您的特定需求做任何保证。<br/>
+4.7 为方便您直观的了解商品和相关服务，妙想志成公司可以以图片或视频的形式展示商品，但是您应当认同图片或视频与真实商品之间具有直观上的差异性。
+                 </p>
+               </li>
+               <li>
+                 <h4>
+                 五．商品订购</h4><p>
+5.1 如果您使用"51鹦鹉网"网站购买商品或相关服务，请务必依据系统程序填写并提交订单。当您提交订单后，网站系统将自动向您的注册邮箱发送确认邮件。无论您所收到确认邮件如何描述，该确认邮件仅表示"51鹦鹉网"网站已经收到您的订单要约。<br/>
+5.2 妙想志成公司特别提醒您，请在购买商品或相关服务之前，务必认真了解有关商品的所有信息。在订单提交成功之后，您不得以不了解商品的相关信息而主张撤销订单。<br/>
+5.3 当您使用"51鹦鹉网"网站购买商品或相关服务时，请务必依据本协议及系统程序进行操作。您不得以不了解本协议及系统程序为由主张订单无效或可撤销。<br/>
+5.4 "51鹦鹉网"网站收到您的订单后，将会及时审核订单。经审核无误，妙想志成公司将安排商品配送。如果妙想志成公司认为订单存在疑问，无论您是否已经支付价款，妙想志成公司均有权取消订单，或通过邮件、电话等沟通渠道要求您变更订单。<br/>
+5.5 因市场存在难以控制的商业因素，您订购或拟订购的商品有可能存在缺货现象，如果缺货，妙想志成公司将无法配送，此时，您有权取消订单。<br/>
+5.6 如果"51鹦鹉网"网站推出预订商品，您可以根据网站的相关预订规则提交订单。妙想志成公司可以根据实际情况决定是否接受订单，如果接受订单，妙想志成公司将按照预订规则和您的合理要求向您配送商品。<br/>
+5.7 当您提交订单时，请务必确认商品信息和价格信息。妙想志成公司对商品信息和价格信息作出变动的，不再特别作出通知或说明。<br/>
+5.8 妙想志成公司根据本协议的规定拒绝、取消或不接受订单的，您同意自行承担一切责任，但是有特别规定的除外。<br/>
+
+                 </p>
+               </li>
+                <li>
+                 <h4>
+                 六．商品价格</h4><p>
+6.1 为方便您选购商品，妙想志成公司会在网站的相应位置公布商品价格。当您订购商品并提交订单后，您所收到的来自"51鹦鹉网"网站的确认邮件将包含相应的商品价格信息。<br/>
+6.2 商品价格包含增值税，运费另行收取。运费的具体结算以特殊条款的规定以及"51鹦鹉网"网站向您发出的邮件说明为准。<br/>
+6.3 妙想志成公司可以根据市场变化或市场竞争的需要不时的变更商品价格。如果价格变更发生在您提交订单之前，您所订购商品的价格以变更后的价格为准。如果您提交订单后发生了价格变更，您所订购商品的价格以您提交订单时的价格为准。<br/>
+6.4 提交订单后，妙想志成公司发现由于人工操作失误或技术问题导致定价错误，您同意按如下方式处理： 
+（1）如果您所订购商品的正确价格（以"51鹦鹉网"网站对相应商品价格的再次公布为准，下同）低于错误定价，妙想志成公司有义务按较低价格收取您的付款。 
+（2）如果您所订购商品的正确价格高于错误定价，妙想志成公司将会与您沟通，并根据实际情况作出取消订单或停止配送的处理，此时，您也有权取消订单。
+
+                 </p>
+               </li>
+                <li>
+                 <h4>
+                 七．促销规则</h4><p>
+7.1 促销活动是指在一定时期内，妙想志成公司针对某些商品作让利处理或针对消费者群体开展的优惠激励措施。<br/>
+7.2 促销形式包括如下三种情形： 
+（1）某些商品集合内的满减、满返和满增； 
+（2）相对于原网站定价的直接降价；
+ （3）在结算时使用优惠券抵扣订单金额； 
+（4）其它符合7.1约定的情形。<br/>
+7.3 促销活动的目的是为满足您及其他消费者的消费需求，一切以牟利、排挤竞争为意图或者为达到其它恶意目的的参与行为均不予接受。<br/>
+7.4 使用同一账户参与促销活动时，每日下单总量至多仅限于20份，超过份数限制的订单作无效处理，妙想志成公司有权取消或停止发货。<br/>
+7.5 妙想志成公司发现与促销活动相关的订单中的配送地址相同或相近的，相关订单无效，妙想志成公司有权取消或停止发货。<br/>
+7.6 妙想志成公司发现与促销活动相关的订单中的收货人信息相同或相近的，相关订单无效，妙想志成公司有权取消或停止发货。<br/>
+7.7 妙想志成公司有合理理由怀疑用户有恶意参加促销活动的，相关订单无效，妙想志成有权取消或停止发货。<br/>
+7.8 妙想志成公司开展促销活动时所临时发布的活动规则与上述不一致的，以临时发布的规则为准。<br/>
+
+                 </p>
+               </li>
+                <li>
+                 <h4>
+                 八．物流配送</h4><p>
+8.1 如果您订购冷藏、冷冻类商品，妙想志成公司将依靠其自建物流系统直接进行物流配送服务；如果您订购冷藏、冷冻类之外的商品，您授权妙想志成公司指定顺丰速运代办托运。 但是如果您订购的商品属于时令优选栏目下的商品，无论商品是否属于冷藏、冷冻类，您均授权妙想志成公司指定顺丰速运代办托运。<br/>
+8.2 您授权妙想志成公司依靠其自建物流系统直接进行物流配送服务，您同意不选择其它物流、快递或邮政单位配送商品。<br/>
+8.3 妙想志成公司根据您提供的收货人信息及您在备注信息栏中填写的合理信息安排商品配送。如果收货人不是您本人，收货人的行为即为您本人的行为，收货人与您应当承担连带责任。<br/>
+8.4 订单生成后，您通过与妙想志成公司的沟通变更了收货人信息或备注信息的，实际配送服务将依据您变更后的信息作出安排。 <br/>
+8.5 妙想志成公司在特别条款（《配送服务》）中所承诺的配送时效均为一般配送时间，该时间仅作为您订购商品的参考因素。<br/>
+8.6 发生下列情形之一的，妙想志成公司不承担迟延送达的违约责任： <br/>
+（1）	发生不可抗力或情势变更事件的；
+（2）	 因您提供的信息有误、过时、缺失，或根据您提供的信息无法判断收货人或收货地址的；
+（3）	因网络故障、系统故障、系统检修、维护或升级导致迟延送达的； 
+（4）	因路途遥远且交通不便造成迟延送达的； 
+（5）	为满足您的配送要求及特殊需要而迟延送达的。 
+（6）	由顺丰速运代办托运的。
+
+                 </p>
+               </li>
+                <li>
+                 <h4>
+                 九．评论规则</h4><p>
+9.1 妙想志成公司欢迎并鼓励您在网站系统上进行商品评论、文章评论、公布订单、发布图片或视频等言论行为。但是，在"51鹦鹉网"网站上所进行的一切言论行为均属于您的个人行为，与妙想志成公司无关。<br/>
+9.2 为保障网络信息安全，您在进行言论行为时，应当遵守国家相关法律法规的规定，不得制作、复制、发布、传播含有下列内容的信息： （1）违反宪法所确定的基本原则的； 
+（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的； 
+（3）损害国家荣誉和利益的；
+ （4）煽动民族仇恨、民族歧视，破坏民族团结的；
+ （5）破坏国家宗教政策，宣扬邪教和封建迷信的；
+ （6）散布谣言，扰乱社会秩序，破坏社会稳定的； 
+（7）	散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
+（8）	 侮辱或者诽谤他人，侵害他人合法权益的； 
+（9）	含有法律、行政法规禁止的其他内容的。<br/>
+9.3 您保证自己在网站系统上所进行的一切言论行为均不侵犯妙想志成公司的合法权益。<br/> 
+9.4 您保证自己在网站系统上所进行的一切言论行为均不侵犯任何第三人的合法权益。如果因您的言论行为引起法律纠纷，您应当积极协助妙想志成公司处理。第三人向妙想志成公司索赔的，妙想志成公司有权在实际赔偿之后，向您追偿。 <br/>
+9.5 您承诺自己在网站系统上制作、复制、发布、传播的一切评论、图片和视频不损害妙想志成公司的商业信誉。<br/>
+9.6 妙想志成公司认为您违反相关评论规则的，其有权删除相关评论、图片或视频，冻结或注销您的账户，并保留追究您法律责任的权利。<br/>
+
+                 </p>
+               </li>
+                <li>
+                 <h4>
+                 十．知识产权</h4><p>
+10.1 除您及其它用户向"51鹦鹉网"网站所发布的评论、订单、图片或视频之外，妙想志成公司对"51鹦鹉网"网站及网站上所显示的其它所有信息资料，包括但不限于商标、软件系统、宣传图案、商品图片、商品信息、视频资料和文字信息，享有绝对的、完全的知识产权。<br/>
+10.2 未经妙想志成公司同意，您不得以任何方式修改、复制和传播妙想志成公司享有知识产权的信息资料。<br/>
+10.3 对于您在"51鹦鹉网"网站上所发布的一切信息资料，您同意授予妙想志成公司独家的、永久的、免费的许可使用权利。您确认，妙想志成公司对您所发布的信息资料的使用是基于您对信息资料内容的合法性、真实性的承诺之上，妙想志成公司因使用该信息资料而遭受索赔、指控的，您应当承担全部责任。<br/>
+
+                 </p>
+               </li>
+               <li><h4>十一．隐私保护</h4><p>
+11.1 妙想志成公司保证不对外公开或向任何第三方透露您的注册信息、账户信息和交易信息，但是存在下列情形之一的除外：
+ （1）公开或透露相关信息之前获得您许可的； 
+（2）根据法律或政策的规定而公开或透露的； 
+（3）为向您提供商品或服务而需要公开或透露的；
+ （4）妙想志成公司为保护自身利益而公开的；
+ （5）根据本协议其它约定而公开或透露的。<br/>
+11.2 为了向您提供优质的服务，您同意妙想志成公司将您的注册信息、账户信息和交易信息提供给妙想志成公司的关联公司以及与妙想志成公司合作的第三方。<br/>
+11.3 妙想志成公司根据本协议的规定对网站或相应的系统进行检修、维护或升级时，有可能丢失、损坏或泄漏您的注册信息、账户信息或交易信息，您对此表示理解，且不要求妙想志成公司承担责任。<br/>
+11.4 为保证交易安全以及保障您的合法权益，妙想志成公司建议您对注册信息、账户信息和交易信息进行数据备份。
+</p></li>
+               <li><h4>十二．协议终止</h4><p>
+12.1 妙想志成公司有权经通知后终止本协议，您有权请求妙想志成公司作出终止本协议的决定。<br/>
+12.2 发生下列情形之一的，妙想志成公司有权立即终止协议： 
+（1）本协议发生变更后，您明确通知妙想志成公司不愿意接受新协议或变更内容的； 
+（2）妙想志成公司发现您连续1个月内注册用户数量超过10个的；
+ （3）妙想志成发现您为达到排挤竞争对手、实施不正当竞争的目的而注册用户的，或者妙想志成发现您有其它恶意目的注册用户，扰乱正常经营秩序的； 
+（4）妙想志成公司发现您恶意注册用户，扰乱正常经营秩序的； 
+（5）妙想志成公司发现您对订单多次恶意拒收，扰乱正常经营秩序的；
+ （6）您注册账户后，连续12个月不使用该账户的； 
+（7）您通过本网站进行违法犯罪活动的。<br/>
+12.3 协议终止后，您在"51鹦鹉网"网站上的积分、优惠券和礼品卡均失效，妙想志成公司不予兑现。<br/>
+12.4 协议终止后，您同意妙想志成公司在2年内继续保留您的注册信息、账户信息以及交易记录。<br/>
+12.5 协议终止后，妙想志成公司有权向他人开放您所注册使用的用户名。<br/>
+12.6 如果您在协议终止之前存在违反本协议的行为，妙想志成公司有权依据本协议追究您的法律责任。
+</p></li>
+               <li><h4>十三．法律适用</h4><p>
+13.1 本协议的签订、履行和执行及解释均适用中华人民共和国法律法规。如果中华人民共和国法律法规没有相关规定，则适用中华人民共和国的商业惯例。<br/>
+13.2 如果本协议的相关规定违反中华人民共和国法律法规的相应条款，则适用中华人民共和国法律法规。如果本协议的相关规定违反中华人民共和国的相关商业惯例，则仍然以本协议为准。
+</p></li>
+               <li><h4>十四．纠纷解决</h4><p>
+14.1 因本协议发生的任何争议，妙想志成公司与您应当友好协商，协商不成的，任何一方均有权向妙想志成公司住所所在地有管辖权的人民法院起诉，其它任何法院均不具有管辖权。
+</p></li>
+           </ol>
+        </div>
+	</div>
+	<div class="cls"></div>	
+	<br />
+
+</div>
+<br />
+<br />
+<!--流程-->
+<div id="Other"></div>
+
+<!--相关信息-->
+<div class="info">
+	<h4>                
+		 <a href="help-register.html" target="_self">新手指南</a>
+        <a href="help-distributionNotice.html" target="_self">配送方式</a>
+		<a href="help-payment.html" target="_self">支付方式</a>
+        <a href="help-inspection.html" target="_self">售后服务</a>
+		<a href="company.html" target="_self">关于我们</a>
+	
+	</h4>
+	<p>Copyright©2014 www.51yingwu.com. All Rights Reserved 北京妙想志成科技有限公司 ｜ <a href="http://www.miitbeian.gov.cn/" style="color: #7E7E7E" target="_blank">京ICP备14037065号</a><br/>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+</div>
+
+
+
+
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+
+
+</body>
+</html>

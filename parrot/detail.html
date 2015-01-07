@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="51鹦鹉网－当日到货不隔夜｜产地直供!水果,国产水果,进口水果,特价水果 "/>
+    <meta name="Description" content="51鹦鹉网是专业的水果视频网络销售平台，精选水果，产地直接供应水果" />
+<title>51鹦鹉网－便利店详情页－当日到货不隔夜!</title>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/public_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/list_1.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+<!--轮播Css 0604-->
+<link rel="stylesheet" type="text/css" href="css/lrtk.css">
+<link href="css/fly.css" rel="stylesheet" type="text/css" />
+<!--轮播Js 0604-->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
+<script src="js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jQuery.md5.js"></script>
+<script type="text/javascript" src="js/jquery.orbit-1.2.3.min.js"></script>	
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>	
+<script type="text/javascript" src="js/jQuery-shopping.js"></script>
+<script type="text/javascript" src="js/cardCookie.js"></script>
+<script type="text/javascript" src="js/buy.js"></script>
+<script type="text/javascript" src="js/commodity.js"></script>
+<script type="text/javascript" src="js/param.js"></script>
+<script type="text/javascript" src="js/address.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript">
+	
+	var p=new param();
+	var commodity=new Commodity();	
+	var buy=new userBuy();	
+	var init=new initIndex();
+	var address=new addressMange();
+	$(window).load(function() {
+		var commodityId=p.getValue("commodityId");
+		$("#commodityId").val(commodityId);
+		var groupCommodityId=p.getValue("groupCommodityId");
+		$("#groupCommodityId").val(groupCommodityId);
+		commodity.init=init;
+		init.initialize();
+		init.loadShoppingCart();
+		init.orderPrompt();
+		init.loadUserArea();
+		address.initArea();
+		commodity.findCommodityDetail(commodityId);
+		commodity.findGroupCommodityDetail(groupCommodityId);
+		//commodity.createCommodityDetail(null);
+		var nowDate=new Date();
+		var nowTime=nowDate.getHours()*nowDate.getMinutes()*60-nowDate.getSeconds();
+		var intDiff = parseInt(24*60*60)-parseInt(nowTime);
+		var nowMonth=nowDate.getMonth()+1;
+		var nowDay=nowDate.getDate();
+		if(nowMonth<10){
+			nowMonth="0"+nowMonth;
+		}
+		if(nowDay<10){
+			nowDay="0"+nowDay;
+		}
+		var nowPhase =nowDate.getFullYear()+"-"+nowMonth+"-"+nowDay;
+		$("#phase").text(nowPhase);
+		commodity.startPhase(intDiff);
+		$('.Q-buy-btn').shoping(); 
+		$(document).keypress(function(e) { 
+			//回车键事件,执行登录
+			if(e.which == 13) { 
+				init.loginReuest();
+			} 
+		});
+        return_top();
+	});
+</script>
+</head>
+
+<body>
+<!--头部-->
+<div id="Header">
+	<div class="headcont">
+		<div class="area" onclick="init.showArea()">
+			<a href="javascript:void(0);"  class="link" id="showUserSelectArea">请选择服务区域</a>
+			 <img src="images/ico_arrow.gif"/>
+	    </div>
+		<div id="wexinDialog" title="微信关注" style="display:none;"><center><br/><image src="images/weixin.jpg"></b></center></div>  
+		<div class="btns" style="display:;" id="loginBefore"><!--登录前-->
+			<a href="register.html" target="_self" class="link">注册</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showLogin()">登录</a><span class="line">|</span>
+            <a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a>	
+			<span class="line">|</span>
+			<a href="mycart.html" class="buycar">
+			<img border="0" src="images/ico_car.gif" width="25" height="23" />去购物车结算【0】</a>			
+		</div>
+		<div class="btns" style="display:none;" id="loginAfter"><!--登录后-->
+			<a href="account_safe.html"><span id="userInfo"></span></a>
+			<a href="javascript:void(0);" onclick="init.logoutReuest()">［退出］</a>
+			<span class="line">|</span>
+			<a href="myorder.html" target="_self" class="link">我的订单</a><span class="line">|</span>
+			<a href="javascript:void(0);" class="link" onclick="init.showWeiXin()">微信关注</a>	<span class="line">|</span>
+			<div class="J-shoping J-shoping-small">
+                <a href="mycart.html" target="_self" title="" class="buycar"><img border="0" src="images/ico_car.gif" width="25" height="23" /><em class="baseBg"></em>去购物车结算【<b id='myCard'>0</b>】</a>
+            </div>
+		</div>
+		<div class="cls"></div>
+		<!--新增加 0417 start-->
+		<div  style="display:none;" id="areaWin">
+            <div class="areaWin_left">
+                <img src="images/logo.jpg" style="width: 170px;height: 70px;"/>
+            </div>
+            <div class="areaWin_right">
+                <h3 class="text_org">欢迎来到51鹦鹉网</h3>
+                <p>请选择您需要的送货区域</p>
+                <h4 class="text_org" >！提示：暂时只提供以下服务区域，其他服务区域暂时不能提供免费送货服务。</h4>
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="fillform ct">
+                    <tr align="f">
+                        <td width="33%">
+                            <div id="uboxstyle1">
+                                <select name="xzq" id="xzq" class="fill2" onchange="address.loadUserSelectAreaXzq()">
+                                    <option value="0"  selected="selected">请选择行政区</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td width="33%">
+                            <div id="uboxstyle2">
+                                <select name="shq" id="shq" class="fill2" onchange="address.loadUserSelectAreaSq()">
+                                    <option value="0"  selected="selected">请选择街道（商圈）</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="16" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="left"><a href="javascript:void(0);" onclick="init.userSelectArea()" class="btnred">确&nbsp;&nbsp;&nbsp;&nbsp;定</a></td>
+                    </tr>
+                </table>
+            </div>
+
+		</div>
+		<!--新增加 0417 end-->
+		<div id="loginWin" style="display:none;">
+			<br />
+			
+			<form action="" method="post" id="login_form" name="login_form">
+			  <table width="90%" border="0" cellspacing="0" cellpadding="0" class="ct" style="display:;">
+				<tr>
+					<td width="10%" align="right"><p>用户名</p></td>
+                    <td width="4%">&nbsp;</td>
+                    <td width="86%"><input type="text" name="login" id="login"  class="fill" required autofocus /></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td align="right"><p>密码</p></td>
+                    <td>&nbsp;</td>
+                    <td><input type="password" name="password" id="password" class="fill" required /></td>
+					
+				</tr>
+				<tr>
+					<td colspan="3" height="17"></td>
+				</tr>
+                <tr>
+					<td width="80%" colspan="3">
+						<div id="verificationCode" style="display:none;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td align="right" width="6%">验证码</td>
+								<td width="2%">&nbsp;</td>
+								<td width="50%">
+									<input style="width:190px;" type="text" name="captcha" id="captcha" class="fill2" required />
+									<image src="" id="captchaImage" style="vertical-align:middle;" /> <a href="javascript:void(0)" style="text-decoration:underline;vertical-align:middle;color:#888;"  onclick="init.loadVerificationCode()">换一张</a>
+								</td>
+							  </tr>
+							 </table>
+						 </div>
+					</td>
+				</tr>
+				<tr id="login_space" style="display:none;">
+					<td colspan="3" height="17"></td>
+				</tr>
+				<tr id="show_error" style="display:none;">
+					<td align="right">&nbsp;</td>
+                    <td>&nbsp;</td>
+					<td><b class="error_org" id="error_org"></b></td>
+				</tr>	
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                         <tr>
+								<td width="6%" height="43"><input type="checkbox" id="autoLoginSelcted"/></td>
+								<td width="46%"><span>2周内自动登录</span></td>
+								<td  align="right"><a href="password_step1.html" target="_self"  class="text_gra" style="color:#888;">忘记密码？</a></td>
+							</tr>
+                        </table>
+
+                    </td>
+				</tr>
+				<tr>
+                	<td></td>
+                    <td></td>
+					<td>
+                    
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="50%"><a href="javascript:void(0)" onclick="init.loginReuest()" class="btnred">立即登录</a></td>
+							<td width="50%" align="right"><a href="register.html" class="btnblue1">注&nbsp;&nbsp;&nbsp;&nbsp;册</a></td>
+                          </tr>
+                        </table>
+
+                    </td>
+				</tr>
+			</table>
+			</form>
+		</div>
+
+				
+	</div>
+</div>
+
+<!--4个服务-->
+<div id="Logo">
+	<a href="index.html" target="_self"><img src="images/logo.jpg" width="199" height="87" /></a>
+    <ul>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=107&groupCommodityId=157" target="_blank">新疆西州蜜哈密瓜</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=118&groupCommodityId=163" target="_blank">新西兰金奇异果</a>
+        </li>
+        <li>
+            <a href="http://www.51yingwu.com/detail.html?commodityId=139&groupCommodityId=191" target="_blank">越南红心火龙果</a>
+        </li>
+    </ul>
+</div>
+
+<!--导航-->
+<div id="Nav">
+	<div class="navcont">
+		<!--<h4 class="category">每周特惠水果推荐</h4>-->
+		<ul class="navitem">
+			<li><a href="index.html" target="_self">首页</a></li>
+			<li><a href="favorable.html">特惠活动</a></li>
+			<li><a href="list.html" target="_self">鹦鹉优选</a></li>
+			<li><a href="company.html" target="_self">关于我们</a></li>
+			<div class="cls"></div>	
+		</ul>	
+		<div class="cls"></div>	
+	</div>
+</div>
+
+<div class="container">
+    <div class="bread">
+        <div class="ct h4"><a href="#" class="text_gra"><b>首页</b></a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="list.html?groupId=100" id="breadcrumbNavigation" target="_self" class="text_gra"><b id="navigatioNName">进口水果</b></a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<b id="navigationCommodity">澳大利亚超大樱桃</b></div>
+    </div>
+</div>
+
+<div class="container border_gray">
+	<div class="imgshow" id="commodityDetailImage">
+    	<div class="imgzoom">
+        	<a href="javascript:void(0);"><img src="#" onclick="commodity.showCommodityDetailImage(this)" id="commodityDetailImage_1" width="71" height="71" /></a>
+            <a href="javascript:void(0);"><img src="#" onclick="commodity.showCommodityDetailImage(this)" id="commodityDetailImage_2" width="71" height="71" /></a>
+            <a href="javascript:void(0);"><img src="#" onclick="commodity.showCommodityDetailImage(this)" id="commodityDetailImage_3" width="71" height="71" /></a>
+        </div>	
+    </div>
+    <div class="infoshow">
+   	  <h1 id="commodityName"></h1>
+      <h2 id="commodityTitle"></h2>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f7f5f5">
+		<input type="hidden" name="commodityId" id="commodityId" />
+		<input type="hidden" name="groupCommodityId" id="groupCommodityId" />
+          <tr class="white_bg">
+          	<td colspan="4" height="10"></td>
+          </tr>
+          <tr >
+            <td width="6%" height="28">&nbsp;</td>
+            <td width="44%"><p class="h4">商品到货时间： <b id="phase"></b></p></td>
+            <td width="44%"><p class="h4">商品产地：<b id="origin"></b></p></td>
+            <td width="6%">&nbsp;</td>
+          </tr>
+          <tr class="white_bg">
+            <td height="28">&nbsp;</td>
+            <td><p class="h4">最佳品尝时限： <b id="best"></b></p></td>
+            <td><p class="h4">商品编号：<b id="code"></b></p></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr >
+            <td height="28">&nbsp;</td>
+            <td><p class="h4">优选份数总计： <b id="amount"></b>份</p></td>
+            <td><p class="h4">支付方式：货到付款/支付宝</p></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="white_bg">
+          	<td colspan="4" height="10"></td>
+          </tr>
+        </table>
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50%" height="39" align="center" bgcolor="#674942"><p class="h3 text_wh">优选倒计时：<b id='commodityHour'></b>:<b id='commodityMin'></b>:<b id='commoditySecond'></b></p></td>
+            <td width="1%">&nbsp;</td>
+            <td width="49%" bgcolor="#674942" align="center"><p class="h3 text_wh">优选剩余：<b id="remain"></b>份</p></td>
+          </tr>
+        </table>
+		<br />
+		<br />
+		
+        
+        <div class="price">
+            <h4 class="text_org">优惠价</h4>
+            <h2 class="fl">
+                <em>￥</em><b id="price"></b><span>/份</span>
+            </h2>
+            <p class="market fl">市场价：<span><b id="source"></b>/份</span></p>
+            <div class="cls"></div>
+        </div>
+        
+        <div class="number">
+        	<span>数量</span>
+            <a href="javascript:void(0);" onclick="buy.reduceCommodity()">-</a>
+				<input type="text" value="1" onBlur='buy.updateCommodity(this)' onkeyup='buy.inputNumber(this)' onafterpaste='buy.inputNumber(this)' maxlength='3' id="shoppCart"/>
+            <a href="javascript:void(0);" onclick="buy.addCommodity()">+</a>
+        </div>
+        <br />
+		
+        <div class="mb10 left">
+        	<a href="javascript:void(0);" onclick="buy.nowBuy()" class="btnorg1">立即购买</a>
+            <a href="javascript:void(0);" title="加入购物车"   id="buy-s-1" class="btnblue3 mr10 Q-buy-btn">加入购物车</a>
+        </div>
+		
+        <p class="text_org"><b id="orderPrompt">提示：上午11:30前完成下单，预计当日18:00前送达</b></p>
+        
+        
+
+  </div>
+    <div class="cls"></div>
+</div>
+
+<div class="ads">
+	
+</div>
+<div class="container">
+	<div class="con_text">
+    	<!--<h4 class="con_head"><span></span></h4>-->
+        <div class="con_main" id="commodityDetail">
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+
+
+<!--流程-->
+<div id="Other"></div>
+
+<!--相关信息-->
+<div class="info">
+	<h4>                
+		<a href="help-register.html" target="_self">新手指南</a>
+        <a href="help-distributionNotice.html" target="_self">配送方式</a>
+		<a href="help-payment.html" target="_self">支付方式</a>
+        <a href="help-inspection.html" target="_self">售后服务</a>
+		<a href="company.html" target="_self">关于我们</a>
+	</h4>
+	<p>Copyright©2014 www.51yingwu.com. All Rights Reserved 北京妙想志成科技有限公司 ｜ <a href="http://www.miitbeian.gov.cn/" style="color: #7E7E7E" target="_blank">京ICP备14037065号</a><br/>所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。</p>
+</div>
+
+
+
+
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+/*====特惠便当====*/
+#Tehui{
+	width:268px;
+	height:319px;
+	overflow:hidden;
+	border:2px #69b8d2 solid;
+	border-top:0;
+	float:left;
+	position:relative;}
+#Tehui .num{
+	width:169px;
+	height:59px;
+	overflow:hidden;
+	background:url(../images/bg_nums.gif) no-repeat;
+	padding:0 0 0 99px;}
+#Tehui .num span{
+	display:block;
+	width:37px;
+	height:51px;
+	line-height:50px;
+	font-size:35px;
+	font-family:"Verdana, Geneva, sans-serif";
+	float:left;
+	text-align:center;
+	margin-right:7px;}
+
+
+/*====产品列表====*/
+.prolist{
+	width:1180px;
+	height:auto;
+	overflow:hidden;
+	border-bottom:1px #e5e5e5 solid;}
+.listem li{
+	display:block;
+	width:236px;
+	height:auto;
+	overflow:hidden;
+	float:left;}
+.listem li a.product{
+	display:block;
+	width:255px;
+	height:264px;
+	overflow:hidden;
+	position:relative;
+	left:-10px;
+	transition:left 0.3s ease;
+	-webkit-transition:left 0.3s ease;
+	-moz-transition:left 0.3s ease;
+	-o-transition:left 0.3s ease;}
+.listem li:hover a.product{
+	left:0;}
+/*====产品信息内容====*/
+.listem li .price{
+	width:auto;
+	height:135px;
+	padding:23px;
+	line-height:24px;
+	cursor:pointer;}
+.listem li .price h3 a{
+	font-size:16px;
+	font-family:"微软雅黑";
+	color:#333;
+	text-decoration:none;}
+.listem li .price h3 a:hover,
+.listem li .price h3 a:active{
+	color:#e4393c;
+	text-decoration:underline;}
+.listem li .price p{
+	color:#3d97d2;
+	margin-bottom:7px;}
+.listem li .price h4{
+	color:#e4393c;
+	font-family:"微软雅黑";
+	font-weight:normal;}
+.listem li .price h4 span{
+	font-size:20px;
+	font-family:"Verdana";}
+/*====产品便当信息内容====*/
+.listem li.item_bd a.bd{
+	display:block;
+	width:185px;
+	height:199px;
+	margin:0 auto;
+	margin-top:35px;}
+.listem li.item_bd .price{
+	height:145px;
+	padding:0;
+	text-align:center;}
+.listem li.item_bd .price h4 span{
+	font-size:16px;}
+.listem li.item_bd .price h4{
+	margin-bottom:10px;}
+.listem li.item_bd .price .time{
+	display:block;
+	width:83px;
+	height:22px;
+	line-height:20px;
+	background:url(../images/ico_block.gif) no-repeat;
+	padding-left:25px;
+	color:#747781;
+	text-align:left;
+	margin:0 auto;
+	margin-top:5px;}
+
+
+/*====更多商区====*/
+#Area li{
+	display:block;
+	width:385px;
+	height:218px;
+	overflow:hidden;
+	float:left;
+	margin-right:12px;
+	position:relative;}
+#Area li a span{
+	position:absolute;
+	width:124px;
+	height:30px;
+	line-height:30px;
+	overflow:hidden;
+	text-align:center;
+	color:#382d27;
+	background:#fff;
+	opacity:0.8;
+	position:absolute;
+	bottom:30px;
+	right:0;
+	font-weight:bold;}
+#Area li a:hover img,
+#Area li a:active img{
+	opacity:0.9;}
+#Area li.fr{
+	float:right;
+	margin:0;}
+
+.morearea{
+	width:auto;
+	height:38px;
+	line-height:38px;
+	overflow:hidden;
+	text-align:center;
+	color:#382d27;
+	font-weight:bold;}
+.morearea a.text_org{
+	text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

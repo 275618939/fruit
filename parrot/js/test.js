@@ -1,0 +1,1 @@
+<input id="+ptGoods[j].commodityId+" value="+userCards[i].commodityNum+" style='IME-MODE: disabled; WIDTH: 20px; HEIGHT: 15px' onkeyup='this.value=this.value.replace(/\D/g,'')'  onafterpaste='this.value=this.value.replace(/\D/g,'')' maxlength='5' size='14'  type='text' />

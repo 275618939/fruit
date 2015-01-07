@@ -1,0 +1,278 @@
+@charset "utf-8";
+/* CSS Document */
+.advice{
+	display:block;
+	width:420px;
+	height:195px;
+	overflow:auto;
+	padding:10px;
+	line-height:24px;
+	color:#666;
+	border:1px #ccc solid;
+	outline:none;}
+.leftbuy{
+	width:275px;
+	height:auto;
+	float:left;
+	text-align:center;
+	line-height:24px;}
+.rightbuy{
+	width:893px;
+	height:auto;
+	float:left;}
+.rightbuy .btn_jiesuan{
+	margin-left:46px;}
+.bg_gray{
+	background:#f2f2f2;
+	padding:0 45px;}
+.bg_gray1{
+	background:#e5e5e5;
+	padding-left:296px;
+	line-height:30px;}
+
+.buy_head{
+	color:#333;}
+.buy_head span{
+	display:inline;
+	padding:3px 5px;
+	background:#f46200;
+	color:#fff;
+	margin-right:10px;}
+
+.big_selected{}
+.big_selected li{
+	display:block;
+	width:286px;
+	height:auto;
+	border:4px #999 solid;
+	border-radius:14px;
+	text-align:center;
+	padding:20px 0;
+	background:#fff;
+	float:left;
+	margin-right:10px;}
+.big_selected li:hover{
+	border-color:#888;}
+.big_selected li.sel{
+	border:4px #f46200 solid;}
+.big_selected li h3{
+	color:#333;
+
+	margin-bottom:5px;}
+.big_selected li p{
+	color:#666;}
+.big_selected li h4{
+	margin:20px 0 15px 0;}
+.big_selected li h4 a{
+	display:inline;
+	width:auto;
+	color:#fff;
+	padding:4px 15px;
+
+	text-align:center;
+	background:#f46200;
+	border-radius:5px;}
+
+.addcart{
+	width:678px;
+	height:auto;
+	padding:4px 4px 10px 4px;
+	position:relative;
+	border:4px #999 solid;
+	border-radius:6px;
+	overflow:hidden;
+	background:#fff;
+	line-height:22px;
+	text-align:center;
+	cursor:pointer;}
+.addcart img{
+	margin-bottom:10px;}
+.addcart .btnadd{
+	width:678px;
+	height:0;
+	line-height:134px;
+	background:#e74c3c;
+	position:absolute;
+	top:4px;
+	left:4px;
+	opacity:0.8;
+	transition:height 0.3s ease;
+	-webkit-transition:height 0.3s ease;
+	-moz-transition:height 0.3s ease;
+	-o-transition:height 0.3s ease;}
+.addcart:hover .btnadd{
+	height:136px;}
+.addcart .btnadd h3{
+	font-size:24px;
+	;
+	font-weight:normal;
+	text-align:center;
+	color:#fff;
+	opacity:0;
+	transition:opacity 0.3s ease;
+	-webkit-transition:opacity 0.3s ease;}
+.addcart:hover .btnadd h3{
+	opacity:1;}
+
+.band{
+	width:auto;
+	height:3px;
+	overflow:hidden;
+	background:#f46200;}
+.band .blue{
+	width:168px;
+	height:13px;
+	background:#53adcb;}
+
+.listhead{
+	width:auto;
+	height:44px;
+	line-height:44px;
+	padding-left:24px;
+	border:1px #ccc solid;
+	border-top:0;
+	background:#fff;
+	overflow:hidden;}
+.listhead h3{
+	font-size:16px;
+
+	color:#f46200;}
+
+.acount{
+	width:97%;
+	height:86px;
+	line-height:86px;
+	overflow:hidden;
+	background:#f2f2f2;
+	color:#999;
+	text-align:right;
+	margin:0 auto;}
+.acount h3{
+	font-weight:normal;
+	margin-right:35px;}
+.acount span{
+	font-size:24px;
+	}
+
+.next{
+	width:97%;
+	height:auto;
+	margin:0 auto;}
+.next h4{
+	margin:15px 25px 0 0;}
+.next a.btnred{
+	margin-left:20px;}
+
+
+.reci_head{
+	display:block;
+	width:auto;
+	height:48px;
+	line-height:58px;
+	font-size:16px;
+	color:#f46200;
+	border-bottom:1px #999 dashed;
+	margin: 15px 0;}
+
+/*=====订单成功提示=====*/
+.order_tips{
+	width:45%;
+	height:auto;
+	margin:0 auto;}
+.order_tips .ico_right{
+	width:45px;
+	height:45px;
+	overflow:hidden;
+	float:left;
+	background:url(../images/ico.png) no-repeat;
+	margin-right:15px;}
+.order_tips .text_tips{
+	float:left;}
+.order_tips .text_tips h1{
+	font-size:20px;
+	color:#f46200;
+	margin-top:7px;}
+.order_tips .text_tips h4{
+	font-weight:normal;
+	color:#333;
+	margin-top:7px;}
+.order_tips .text_tips h4.fl{
+	margin-right:15px;}
+.process{
+	width:334px;
+	height:14px;
+	line-height:14px;
+	color:#fff;
+	border-radius:50px;
+	
+	background:#53adcb;
+	overflow:hidden;
+	text-align:right;
+	padding:0 5px;
+	font-weight:bold;}
+.order_tips .text_tips p.fl{
+	line-height:12px;
+	margin-left:10px;
+	color:#333;}
+
+/*=======找回密码的步骤123======*/
+.passStep{
+	width:840px;
+	height:40px;
+	overflow:hidden;
+	border:1px #c9c9c9 solid;
+	border-radius:4px;
+	margin:0 auto;}
+.passStep li{
+	float:left;
+	display:block;
+	width:210px;
+	height:40px;
+	line-height:38px;
+	padding-left:70px;
+	background:url(../images/bg_passstep.png) repeat-x 0 -40px;}
+.passStep li h3{
+	font-size:18px;
+	color:#333;
+	float:left;
+	font-weight:normal;}
+.passStep li .side1,
+.passStep li .side2,
+.passStep li .side3{
+	display:block;
+	width:35px;
+	height:40px;
+	float:right;
+	background:url(../images/bg_passstep.png) no-repeat 0 -120px;}
+.passStep li .side2{
+	background-position:bottom left;}
+.passStep li .side3{
+	background-position:0 -80px;}
+
+.passStep li.fini{
+	background:url(../images/bg_passstep.png) repeat-x top right;
+	color:#fff;}
+.passStep li.fini h3{
+	color:#fff;
+	font-weight:bold;}
+/*border:3px #ff6600 solid;*/
+.address{
+	width:auto;
+	height:auto;
+	padding:0 20px;}
+.addlist{}
+.addlist li{
+	width:auto;
+	height:28px;
+	line-height:28px;
+	overflow:hidden;
+	padding:0 10px;
+	clear:both;}
+.addlist li:hover,
+.addlist li:active{
+	background:#fff4d3;}
+.addlist li input,
+.addlist li p{
+	float:left;}
+.addlist li input{
+	margin:7px 5px 0 0;}
